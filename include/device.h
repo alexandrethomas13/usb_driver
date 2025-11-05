@@ -36,6 +36,10 @@
 
 #define USB_ENDPOINT_MAX 15 // Max number of endpoints (0–15)
 
+#define USB_IS_VALID_ENDPOINT_ADDR(addr)                                                           \
+    (((addr) >= USB_ENDPOINT_OUT_START && (addr) <= USB_ENDPOINT_OUT_END) ||                       \
+     ((addr) >= USB_ENDPOINT_IN_START && (addr) <= USB_ENDPOINT_IN_END))
+
 typedef _Bool bool;
 #define true  1
 #define false 0
